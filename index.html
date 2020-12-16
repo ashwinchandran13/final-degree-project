@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+
+<html>
+<head><link rel="stylesheet" href="styles.css"></head>
+<body>
+  <nav id="navbar">
+    <header>Project Documentation</header>
+    <ul>
+      <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+      <li><a class="nav-link" href="#Tools_Used" >Tools Used</a></li>
+      <li><a class="nav-link" href="#Virtual_Box" >Virtual Box</a></li>
+      <li><a class="nav-link" href="#Minikube" >Minikube</a></li>
+      <li><a class="nav-link" href="#Docker">Docker</a></li>
+      <li><a class="nav-link" href="#Docker_Hub" >Docker Hub</a></li>
+      <li><a class="nav-link" href="#Helm">Helm</a></li>
+      <li><a class="nav-link" href="#Kubernetes" >Kubernetes</a></li>
+      <li><a class="nav-link" href="#Prometheus" >Prometheus</a></li>
+      <li><a class="nav-link" href="#Grafana">Grafana</a></li>
+      <li><a class="nav-link" href="#Experiment">Experiment</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <article>
+        <p>This is the documentation of my Final year Engineering Degree Main Project with the title "<i><b>AN AUTO SCALING SYSTEM FOR A WEB APP
+              BASED ON KUBERNETES AND DOCKER</b></i>". This documentation is just a reflection how I implemented an IEEE paper based on this topic on a commercial system.</p>
+
+        <p> The micro -service is a new term in software architecture patterns which
+          divides the complex system into a set of small independent services. Each of the services
+          are running independently in its own process which performs a specific task. Services can
+          communicate with each other by a number of lightweight mechanisms such as HTTP,
+          RPC.</p>
+        <p>Docker and Kubernetes have revolutionized the way of DevOps consulting
+          and both are leading container orchestration tools today. There is always a challenge to
+          control an increase in the demand of scaling and auto-healing of the network and virtual
+          instances. Managing the containers is always as task for any company because
+          microservices which are running on the containers do not communicate with each other.
+          They work independently as a separate entity. This is where kubernetes steps in
+          Kubernetes is nothing but a platform to manage containers. These containers can be docker
+          containers or any other alternative containers. Kubernetes orchestrates, manages and
+          forms a line of communication between these containers.
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="Tools_Used">
+      <header>Tools Used</header>
+      <article>
+        <p>Following components were used to implement this project</p>
+        <ul>
+          <li>VirtualBox VMware</li>
+          <li>Docker</li>
+          <li>Docker Hub</li>
+          <li>Helm</li>
+          <li>Kubernetes</li>
+          <li>Prometheus</li>
+          <li>Grafana</li>
+        </ul>
+      </article>
+    </section>
+    <section class="main-section" id="Virtual_Box">
+      <header>Virtual Box</header>
+      <article>
+        <p>Oracle VM VirtualBox (formerly Sun VirtualBox, Sun xVM VirtualBox and Innotek VirtualBox) is a free and open-source hosted hypervisor for x86 virtualization, developed by Oracle Corporation. Created by Innotek, it was acquired by Sun Microsystems in 2008, which was in turn acquired by Oracle in 2010.
+
+          VirtualBox may be installed on Windows, macOS, Linux, Solaris and OpenSolaris. </p>
+        <p>Virtual Box was used to set up our cluster using development/testing mode mini kubernetes instance called <i>MINIKUBE</i>.
+          There by on running minikube instance, we are actually opening up a virtual box with a cluster machine configured using <i>DOCKER</i></p>
+      </article>
+    </section>
+    <section class="main-section" id="Minikube">
+      <header>Minikube</header>
+      <article>
+        <p>Minikube quickly sets up a local Kubernetes cluster on macOS, Linux, and Windows. We proudly focus on helping application developers and new Kubernetes users.</p>
+        <p>minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes.
+
+          All you need is Docker (or similarly compatible) container or a Virtual Machine environment, and Kubernetes is a single command away: <code>minikube start</code>
+
+        </p>
+        <p>Highlights</p>
+        <ul>
+          <li>Supports the latest Kubernetes release (+6 previous minor versions)</li>
+          <li>Cross-platform (Linux, macOS, Windows)</li>
+          <li>Deploy as a VM, a container, or on bare-metal</li>
+          <li>Multiple container runtimes (CRI-O, containerd, docker)</li>
+          <li>Docker API endpoint for blazing fast image pushes</li>
+          <li>Advanced features such as LoadBalancer, filesystem mounts, and FeatureGates</li>
+          <li>Addons for easily installed Kubernetes applications
+          </li>
+        </ul>
+      </article>
+    </section>
+    <section class="main-section" id="Docker">
+      <header>Docker</header>
+      <article>
+        <p>Containerization is a way of running multiple software applications on the
+same machine. Each of which is run in an isolated environment called container. A
+container is a closed environment for the software. It bundles all the files and libraries
+that the application needs to function correctly. Multiple containers can be deployed on
+the same machine and share the resources. Docker uses images to spawn containers.
+Multiple containers can be created using an image. Images are indexed and saved in an
+online repository managed by Docker. Here is the example where we will know the
+power of Docker: We have a web application running on Ubuntu 15. We need to upgrade
+your OS to the latest Ubuntu 17. But then the software will not run as it depends on
+libraries that are only available in Ubuntu 15. Using a Docker image to run this software,
+we can upgrade Ubuntu to the latest version and ensure that the application will continue
+to run in complete isolation of the OS current libraries.</p>
+        <p>The DockerFile is an instructions file used for building containers. Building
+a image is an incremental process. We can download the Apache web server image
+          (httpd) and use a <code>DockerFile</code> to install components on top of it like a specific version of
+PHP . We can add new packages, change configuration files, create new users and
+groups, and even copy files and directories to the image. All commands that deal with
+Docker containers and images start with docker command followed by subcommands
+and switches. Let’s pull an image, called Busy box from the repository. Busybox is a tiny
+Linux kernel hat has very basic functionality. Here is the command: docker run - -
+detach –name server Busy box.</p>
+        <p>So Docker images for a web application were built using <code>DOCKERFILE</code>and pushed to local docker repo and also were pushed to docker hub repository so in order to pull by using helm charts</p>
+      </article>
+    </section>
+    <section class="main-section" id="Docker_Hub">
+      <header>Docker Hub</header>
+      <article>
+        <p>Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. All containers are run by a single operating system kernel and therefore use fewer resources than virtual machines.
+
+The service has both free and premium tiers. The software that hosts the containers is called Docker Engine. It was first started in 2013 and is developed by Docker, Inc.</p>
+      </article>
+    </section>
+    <section class="main-section" id="Helm">
+      <header>Helm</header>
+      <article>
+        <p>There are thousands of people and companies packaging their applications for deployment on Kubernetes. This usually involves crafting a few different Kubernetes resource definitions that configure the application runtime, as well as defining the mechanism that users and other apps leverage to communicate with the application. There are some very common applications that users regularly look for guidance on deploying, such as databases, CI tools, and content management systems. These types of applications are usually not ones that are developed and iterated on by end users, but rather their configuration is customized to fit a specific use case. Once that application is deployed users can link it to their existing systems or leverage their functionality to solve their pain points.</p>
+        <p>Helm is the package manager (analogous to yum and apt) and Charts are packages (analogous to debs and rpms). The home for these Charts is the Kubernetes Charts repository which provides continuous integration for pull requests, as well as automated releases of Charts in the master branch.
+
+          There are two main folders where charts reside. The <code>stable</code> folder hosts those applications which meet minimum requirements such as proper documentation and inclusion of only Beta or higher Kubernetes resources. The incubator folder provides a place for charts to be submitted and iterated on until they’re ready for promotion to stable at which time they will automatically be pushed out to the default repository.</p>
+        <p>Example workflow for a Chart developer</p>
+        <ul>
+          <li>Create A Chart</li>
+          <li>Developer provides parameters via the values.yaml file allowing users to customize their deployment. This can be seen as the API between chart devs and chart users.</li>
+          <li>A README is written to help describe the application and its parameterized values.
+</li>
+          <li>Once the application installs properly and the values customize the deployment appropriately, the developer adds a NOTES.txt file that is shown as soon as the user installs. This file generally points out the next steps for the user to connect to or use the application.
+</li>
+          <li>If the application requires persistent storage, the developer adds a mechanism to store the data such that pod restarts do not lose data. Most charts requiring this today are using dynamic volume provisioning to abstract away underlying storage details from the user which allows a single configuration to work against Kubernetes installations.
+</li>
+          <li>Submit a Pull Request to the Kubernetes Charts repo. Once tested and reviewed, the PR will be merged.
+</li>
+          <li>Once merged to the master branch, the chart will be packaged and released to Helm’s default repository and available for users to install.
+</li>
+        </ul>
+        <p>Example: Installing a helm chart</p>
+        <code>$ helm install stable/jenkins</code>
+      </article>
+    </section>
+    <section class="main-section" id="Kubernetes">
+      <header>Kubernetes</header>
+      <article>
+        <p>Kubernetes is all about orchestration of containers. Kubernetes is also written
+as K8s which means a pilot in Greek. So, it is the captain of the ship with all the containers
+running inside. Its container management responsibilities include container deployment,
+scaling & descaling of containers & container load balancing. Kubernetes is an opensource platform for managing containerized workloads, services and for automating
+deployment, scaling and orchestration of containerized applications. Kubernetes is all
+about running multiple connected containers all organized in pods. Just like docker is the
+de-facto standard for containers, kubernetes is the de-facto standard for orchestration of
+containers. Kubernetes does not limit the supported application types. Kubernetes has the
+power to support a variety of workloads like stateful, stateless and data processing
+workloads. If the container is able to run the application, kubernetes can definitely run
+the application. They have new release every 3 months so it is rapidly evolving. The main
+application of kubernetes is for orchestration of containers. We can deploy containers
+using kubectl as well deploying web app. We can create ingress routing and run stateful
+services on kubernetes. We can also use kubernetes to manage secrets and passwords.</p>
+        <p>Features Of Kubernetes</p>
+        <ul>
+          <li><i>Automatic Bin-Packing</i>: Kubernetes automatically packages the application and
+schedules the containers based on the requirements. To ensure complete
+utilization and save unused resources, Kubernetes balances between critical
+and best-effort workloads</li>
+          <li><i>Load Balancing and Service Discovery</i>: With Kubernetes, there is no need to
+worry about networking and communication because Kubernetes will
+automatically assign IP addresses to containers and a single DNS name for a set
+of containers, that can load-balance traffic inside the cluster.</li>
+          <li><i>Storage Orchestration</i>: With Kubernetes, you can mount the storage system of your choice. You can either opt for local storage, or choose a public cloud provider such as GCP or AWS, or perhaps use a shared network storage system
+such as NFS, iSCSI, etc.</li>
+          <li><i>Self-Healing</i>: Kubernetes can automatically restart containers that fail during
+execution and kills those containers that don’t respond to user-defined
+health checks. But if nodes itself die, then it replaces and reschedules those
+failed containers on other available nodes</li>
+          <li><i>Secret and configuration Management</i>: Kubernetes can help you deploy and
+update secrets and application configuration without rebuilding image and
+without exposing secrets in your stack configuration.</li>
+          <li><i>Automatic Rollbacks and Rollouts</i>: Kubernetes progressively rolls out changes
+and updates to your application or its configuration, by ensuring that not all
+instances are worked at the same instance. Even if something goes wrong,
+Kubernetes will roll back the change for you.</li>
+        </ul>
+        <p>Here are the few Kubernetes Commands :</p>
+        <ul>
+          <li>List pods with “<code>kubectl get pods</code>” command</li>
+          <li>List deployment with “<code>kubectl get deployments</code>” cmd</li>
+          <li>▪ List services with the “<code>kubectl get services</code>” command</li>
+        </ul>
+      </article>
+    </section>
+    <section class="main-section" id="Prometheus">
+      <header>Prometheus</header>
+      <article>
+        <p>Prometheus is a free software application used for event monitoring and alerting. It records real-time metrics in a time series database (allowing for high dimensionality) built using a HTTP pull model, with flexible queries and real-time alerting. The project is written in Go and licensed under the Apache 2 License, with source code available on GitHub,and is a graduated project of the Cloud Native Computing Foundation, along with Kubernetes and Envoy</p>
+        <p>Prometheus was developed at SoundCloud starting in 2012, when the company discovered that their existing metrics and monitoring solutions (using StatsD and Graphite) were not sufficient for their needs. Specifically, they identified needs that Prometheus was built to meet including: a multi-dimensional data model, operational simplicity, scalable data collection, and a powerful query language, all in a single tool. The project was open-source from the beginning, and began to be used by Boxever and Docker users as well, despite not being explicitly announced. Prometheus was inspired by the monitoring tool Borgmon used at Google.</p>
+        <p>Architecture</p>
+        <p>A typical monitoring platform with Prometheus is composed of multiple tools:</p>
+        <ul>
+          <li>Multiple exporters that typically run on the monitored host to export local metrics.</li>
+          <li>Prometheus to centralize and store the metrics.</li>
+          <li>Alertmanager to trigger alerts based on those metrics.</li>
+          <li>Grafana to produce dashboards.</li>
+          <li>PromQL is the query language used to create dashboards and alerts.</li>
+        </ul>
+      </article>
+    </section>
+    <section class="main-section" id="Grafana">
+      <header>Grafana</header>
+      <article>
+        <p>Grafana is a multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources, Grafana Enterprise version with additional capabilities is also available. It is expandable through a plug-in system. End users can create complex monitoring dashboards using interactive query builders.</p>
+<p>
+As a visualization tool, Grafana is a popular component in monitoring stacks, often used in combination with time series databases such as InfluxDB, Prometheus and Graphite;monitoring platforms such as Sensu,Icinga, Checkmk, Zabbix, Netdata, and PRTG; SIEMs such as Elasticsearch and Splunk; and other data sources.
+
+</p>
+      </article>
+    </section>
+    <section class="main-section" id="Experiment">
+      <header>Experiment</header>
+      <article>
+        <p>We used five physical machines as our experimental environment, and set up
+the Kubernetes cluster with one master node and five working nodes in centos system.
+One master node and one working load is installed in the same physics machine.
+Kubernetes is 1.9.6 version with 64GB memory and 24 cores for each node. And the
+version of Docker is 1.13.1.
+We deployed two instances of API gateway in the default namespace, and
+created the HPA of API Gateway with two monitoring metrics the utilization ratio of
+CPU and QPS. The duration of the experiment is 35 minutes. And we used test
+programs to simulate user requests, started with a gradual increase in requests from
+zero, maintained a linear increase in requests, and finally stabilized 110 requests per
+second. Finally, we stopped the emulator's access to the application.</p>
+        <p>When the request load of API Gateway reaches 45 QPS
+in about 12 minutes, it began to auto scaling, and created an instance. After it
+expanded, the load of the API Gateway service decreased, then began to grow slowly
+and finally stabilized around the 34 QPS. When we stop the test program, it started
+to shrink, and changed the number of instances from three to two. And the total CPU
+usage and limit is shown in Figure 8. Over the experiment results, we can see that the
+Auto Scaling System can dynamically adjust the number of API Gateway instances
+according to its workload. .</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
+
